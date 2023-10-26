@@ -18,16 +18,27 @@ This utility module provides an elegant way to handle WebSocket endpoints in Spr
 
 ### 1. 添加依赖 (Add Dependency)
 
-首先，将`spring-boot-starter-websocket-utils`模块作为依赖添加到你的项目中。
 
-Firstly, add the `spring-boot-starter-websocket-utils` module as a dependency to your project.
 
-```xml
-<dependency>
-    <groupId>org.example</groupId>
-    <artifactId>spring-boot-starter-websocket-utils</artifactId>
-    <version>1.0.1</version>
-</dependency>
+**Step 1.** Add the JitPack repository to your build file
+
+```markup
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+```
+
+**Step 2.** Add the dependency
+
+```markup
+	<dependency>
+	    <groupId>com.github.Wiggle</groupId>
+	    <artifactId>spring-boot-starter-websocket-utils</artifactId>
+	    <version>1.0.1-15f6fdd465-1</version>
+	</dependency>
 ```
 
 ### 2. 创建WebSocket处理器 (Create WebSocket Handler)
