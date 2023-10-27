@@ -6,8 +6,6 @@ import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
-import org.springframework.web.socket.handler.TextWebSocketHandler;
-import org.wiggle.websocket.annotation.AllowedOrigins;
 import org.wiggle.websocket.annotation.WebSocketMapping;
 
 @Configuration
@@ -39,15 +37,8 @@ public class WebSocketConfig implements WebSocketConfigurer {
                 throw new IllegalStateException(
                         "The WebSocketMapping annotation can only be applied to beans of type WebSocketHandler or its subclasses.");
             }
-
             WebSocketMapping mapping = bean.getClass().getAnnotation(WebSocketMapping.class);
-            AllowedOrigins allowedOrigins = bean.getClass().getAnnotation(AllowedOrigins.class);
-            if(allowedOrigins == null){
-                registry.addHandler((WebSocketHandler) bean, mapping.value());
-            }else{
-                registry.addHandler((WebSocketHandler) bean, mapping.value()).setAllowedOrigins(allowedOrigins.value());
-            }
-
+            registry.addHandler((WebSocketHandler) bean, mapping.value()).setAllowedOrigins(mapping.origins());
         }
     }
 
