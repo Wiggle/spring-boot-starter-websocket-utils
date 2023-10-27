@@ -7,6 +7,7 @@ import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
+import org.wiggle.websocket.annotation.AllowedOrigins;
 import org.wiggle.websocket.annotation.WebSocketMapping;
 
 @Configuration
@@ -40,7 +41,13 @@ public class WebSocketConfig implements WebSocketConfigurer {
             }
 
             WebSocketMapping mapping = bean.getClass().getAnnotation(WebSocketMapping.class);
-            registry.addHandler((WebSocketHandler) bean, mapping.value());
+            AllowedOrigins allowedOrigins = bean.getClass().getAnnotation(AllowedOrigins.class);
+            if(allowedOrigins == null){
+                registry.addHandler((WebSocketHandler) bean, mapping.value());
+            }else{
+                registry.addHandler((WebSocketHandler) bean, mapping.value()).setAllowedOrigins(allowedOrigins.value());
+            }
+
         }
     }
 

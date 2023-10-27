@@ -22,6 +22,8 @@ This utility module provides an elegant way to handle WebSocket endpoints in Spr
 
 **Step 1.** Add the JitPack repository to your build file
 
+
+
 ```markup
 	<repositories>
 		<repository>
@@ -39,6 +41,12 @@ This utility module provides an elegant way to handle WebSocket endpoints in Spr
 	    <artifactId>spring-boot-starter-websocket-utils</artifactId>
 	    <version>1.0.1-15f6fdd465-1</version>
 	</dependency>
+	
+	<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-websocket</artifactId>
+</dependency>
+
 ```
 
 ### 2. 创建WebSocket处理器 (Create WebSocket Handler)
@@ -71,6 +79,6 @@ Once you run your Spring Boot application, the WebSocket endpoint will be availa
 
 ## 贡献 (Contribution)
 
-欢迎提供贡献、问题和功能请求！随时查看[问题页面](https://chat.openai.com/c/5bc5b922-605e-4053-be5b-262a013b915b#)。
+欢迎提供贡献、问题和功能请求！
 
-Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://chat.openai.com/c/5bc5b922-605e-4053-be5b-262a013b915b#).
+Contributions, issues, and feature requests are welcome! 

@@ -4,7 +4,7 @@
 
   <groupId>org.wiggle.websocket</groupId>
   <artifactId>spring-boot-starter-websocket-utils</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.3</version>
   <packaging>jar</packaging>
 
   <name>spring-boot-starter-websocket-utils</name>
