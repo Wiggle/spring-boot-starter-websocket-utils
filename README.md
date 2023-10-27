@@ -39,7 +39,7 @@ This utility module provides an elegant way to handle WebSocket endpoints in Spr
 	<dependency>
 	    <groupId>com.github.Wiggle</groupId>
 	    <artifactId>spring-boot-starter-websocket-utils</artifactId>
-	    <version>1.0.1-15f6fdd465-1</version>
+	    <version>1.0.4</version>
 	</dependency>
 	
 	<dependency>
